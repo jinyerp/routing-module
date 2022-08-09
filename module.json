@@ -1,0 +1,16 @@
+{
+    "name": "Routing",
+    "alias": "routing",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Routing\\Providers\\RoutingServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "Helpers/Helper.php"
+    ],
+    "requires": [],
+    "version":"0.1"
+}
