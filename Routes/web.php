@@ -22,11 +22,11 @@ Route::prefix('routing')->group(function() {
 
 // admin 접속 uri prefix
 $prefixAdmin = config('jiny.admin.setting.prefix');
-if(!$prefixAdmin) $prefixAdmin = "admin";
+if(!$prefixAdmin) $prefixAdmin = "_admin";
 
 Route::middleware(['web'])
 ->name('admin.')
-->prefix($prefixAdmin)->group(function () {
+->prefix("jiny/".$prefixAdmin)->group(function () {
     Route::resource('routes',\Modules\Routing\Http\Controllers\RouteController::class);
 });
 
@@ -90,6 +90,8 @@ if(isset($_SERVER['PATH_INFO'])) {
         // actions 폴더 검사
         $path = resource_path('actions');
 
+        //dd("dynamic route");
+
         $filename = str_replace("/","_",$_SERVER['PATH_INFO']).".json";
         $filename = ltrim($filename,"_");
         if(file_exists($path.DIRECTORY_SEPARATOR.$filename)) {
@@ -136,6 +138,8 @@ if(isset($_SERVER['PATH_INFO'])) {
             } else if(isset($actions['table'])) {
 
             }
+        } else {
+            //dd("라우트 정보 없음");
         }
 
     }

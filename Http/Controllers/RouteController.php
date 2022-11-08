@@ -20,11 +20,11 @@ class RouteController extends ResourceController
         $this->setVisit($this);
 
         ##
-        //$this->actions['table'] = "jiny_route"; // 테이블 정보
-        //$this->actions['paging'] = 10; // 페이지 기본값
+        $this->actions['table'] = "jiny_route"; // 테이블 정보
+        $this->actions['paging'] = 10; // 페이지 기본값
 
-        //$this->actions['view_list'] = "jinyadmin::jiny.route.list";
-        //$this->actions['view_form'] = "jinyadmin::jiny.route.form";
+        $this->actions['view_list'] = "routing::route.list";
+        $this->actions['view_form'] = "routing::route.form";
 
     }
 
